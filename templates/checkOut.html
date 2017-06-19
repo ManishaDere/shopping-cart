@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div class="modal fade" id="checkOutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-center" id="exampleModalLabel">Amount to Pay: {{myCart.totalAmount | currency}}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <hr>
+      <div class="modal-body">
+        <div class="row">
+          <form>
+            <div class="col-xs-6 col-sm-6">
+            <input type="text" class="form-control" name="customerName" placeholder="Name">
+            <input type="text" class="form-control" name="customerNumber" placeholder="Number">
+            <input type="text" class="form-control" name="customerAddress" placeholder="Address">
+            <input type="text" class="form-control" name="customerLandmark" placeholder="Landmark">
+            </div>
+          </form>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6">
+          <p>Credit or Debit cart Payment</p>
+            <form>
+              <input type="Number" class="form-control" name="cardNumber" placeholder="card Number">
+            <input type="date" class="form-control" name="cardExpiryDate" placeholder="Expiry">
+            <input type="Number" class="form-control" name="cardCvv" placeholder="CVV">
+            </form>
+          </div>
+          <div class="col-xs-6 col-sm-6">
+          <p>
+            Payment through net-banking
+          </p>
+            <form>
+              <select>
+                <option>State Bank of India</option>
+                <option>Canara Bank</option>
+                <option>Bank of India</option>
+                <option>Axis Bank</option>
+                <option>Bank of Baroda</option>
+                <option>Maharashtra Bank</option>
+                <option>Yes Bank</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <hr>
+        <p>Amount to Pay:{{myCart.totalAmount}}</p>
+        <button class="btn btn-default" >Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

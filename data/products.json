@@ -1,0 +1,111 @@
+[
+      {
+        "id":1,
+        "url": "img/Micromax.jpeg",
+        "name": "Micromax",
+        "price": 4800,
+        "ptype": "smartphone",
+        "brand": "micromax",
+        "os": "android"
+      },
+      {
+        "id":2,
+        "url": "img/Nokia.jpeg",
+        "name": "Nokia",
+        "price": 4700,
+        "ptype": "smartphone",
+        "brand": "nokia",
+        "os": "android"
+      },
+      {
+         "id":3,
+        "url": "img/SamsungJs.jpeg",
+        "name": "SamsungJs",
+        "price": 4000,
+        "ptype": "smartphone",
+        "brand": "Samsung",
+        "os": "android"
+      },
+      {
+        "id":4,
+        "url": "img/Motorola.jpeg",
+        "name": "Motorola",
+        "price": 13000,
+        "ptype": "smartphone",
+        "brand": "micromax",
+        "os": "android"
+      },
+      {
+        "id":5,
+        "url": "img/Asus.jpeg",
+        "name": "Asus",
+        "price": 10000,
+        "ptype": "smartphone",
+        "brand": "asus",
+        "os": "android"
+      },
+      {
+        "id":6,
+        "url": "img/Apple.jpeg",
+        "name": "Apple",
+        "price": 12000,
+        "ptype": "iphone",
+        "brand": "apple",
+        "os": "ios"
+      },
+      {
+        "id":7,
+        "url": "img/Micromax.jpeg",
+        "name": "Micromax",
+        "price": 4800,
+        "ptype": "smartphone",
+        "brand": "micromax",
+        "os": "android"
+      },
+      {
+        "id":8,
+        "url": "img/Nokia.jpeg",
+        "name": "Nokia",
+        "price": 4700,
+        "ptype": "smartphone",
+        "brand": "nokia",
+        "os": "android"
+      },
+      {
+        "id":9,
+        "url": "img/SamsungJs.jpeg",
+        "name": "SamsungJs",
+        "price": 4000,
+        "ptype": "smartphone",
+        "brand": "Samsung",
+        "os": "android"
+      },
+      {
+        "id":10,
+        "url": "img/Motorola.jpeg",
+        "name": "Motorola",
+        "price": 13000,
+        "ptype": "smartphone",
+        "brand": "micromax",
+        "os": "android"
+      },
+      {
+        "id":11,
+        "url": "img/Asus.jpeg",
+        "name": "Asus",
+        "price": 10000,
+        "ptype": "smartphone",
+         "brand": "asus",
+        "os": "android"
+      },
+      {
+        "id":12,
+        "url": "img/Apple.jpeg",
+        "name": "Apple",
+        "price": 12000,
+        "ptype": "iphone",
+         "brand": "apple",
+        "os": "ios"
+      }
+      
+]

@@ -1,0 +1,110 @@
+//filter by search txt textBox
+app.filter('filteredByName', function() {
+  return function (products, searchTxt) {
+    console.log("searchTxt==>", searchTxt);
+  var filteredByname = [];
+  var isFilterDone = false;        
+  if (searchTxt) {
+    for (var i=0; i<products.length; i++){
+      if(products[i].name.toLowerCase().indexOf(searchTxt.toLowerCase()) > -1){
+        filteredByname.push(products[i]);
+        isFilterDone = true;
+      }
+    }
+  }
+  //if nothing selected return all products
+  if(!isFilterDone){
+    filteredByname = products;
+  }
+   console.log('filteredByname() arrayToReturn =>', filteredByname);  
+  return filteredByname;
+ };
+});
+
+
+//filter by product type
+app.filter('filterByPtype', function() {
+  return function (products, ptype1, ptype2) {
+  var output = [];
+  var isFilterApplied = false;        
+  for (var i=0; i<products.length; i++){
+   console.log("products ==>",products[i].ptype);
+   if(ptype1  &&  products[i].ptype == ptype1){
+     output.push(products[i]);
+     isFilterApplied = true;
+   }
+   if (ptype2 && products[i].ptype == ptype2){
+     output.push(products[i]);
+     isFilterApplied = true;
+   }
+  }
+  //if nothing selected return all products
+  if(!isFilterApplied){
+    output = products;
+  }
+   console.log('filterByPtype() arrayToReturn =>', output);  
+  return output;
+ };
+});
+
+//filter by brand
+app.filter('filterByBrand', function() {
+  return function(products, brand1, brand2, brand3, brand4) {
+    var filteredBybrand = [];
+    var isFilterdone = false;
+    for (var i = 0; i < products.length; i++) {
+      console.log("products brand==>", products[i].brand);
+      if (brand1 && products[i].brand == brand1) {
+        filteredBybrand.push(products[i]);
+        isFilterdone = true;
+      }
+      if (brand2 && products[i].brand == brand2) {
+        filteredBybrand.push(products[i]);
+        isFilterdone = true;
+      }
+      if (brand3 && products[i].brand == brand3) {
+        filteredBybrand.push(products[i]);
+        isFilterdone = true;
+      }
+      if (brand4 && products[i].brand == brand4) {
+        filteredBybrand.push(products[i]);
+        isFilterdone = true;
+      }
+    }
+    //if nothing selected return all products
+    if(!isFilterdone){
+      filteredBybrand = products;
+    }
+    console.log('filteredBybrand() arrayToReturn =>', filteredBybrand);
+    return filteredBybrand;
+  };
+});
+
+//filter by os
+app.filter('filterByOs', function() {
+  return function(products, os1, os2) {
+    var filteredByOs = [];
+    var isFilterdone = false;
+    for (var i = 0; i < products.length; i++) {
+
+      if (os1 && products[i].os == os1) {
+        filteredByOs.push(products[i]);
+        isFilterdone = true;
+      }
+      if (os2 && products[i].os == os2) {
+        filteredByOs.push(products[i]);
+        isFilterdone = true;
+      }
+    }
+    //if nothing selected return all products
+    if(!isFilterdone){
+      filteredByOs = products;
+    }
+    console.log('filteredByOs() arrayToReturn =>', filteredByOs);
+    return filteredByOs;
+  };
+});
+
+
+
+<!-- <div ng-repeat="product in products | filteredByName : searchtxt |filterByPtype: search.smartphone : search.iphone | filterByBrand: searchbrand.apple : searchbrand.Samsung : searchbrand.nokia : searchbrand.micromax | filterByOs: searchos.android : searchos.ios"> -->

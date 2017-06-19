@@ -1,0 +1,148 @@
+<div ng-controller="homeCntrl">
+
+<section class="main-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 column-left">
+
+        <p>Search</p>
+        <input type="text" class="form-control" name="search-input" placeholder="Search" ng-model="searchtxt">
+        <hr>
+
+        <p>Filter by types:</p>
+        <input type="checkbox" name="types" ng-model="search.smartphone" ng-true-value=" 'smartphone' "  ng-false-value="''"><span>Smart phone</span><br>
+        <input type="checkbox" name="types" ng-model="search.iphone" ng-true-value=" 'iphone' "  ng-false-value="''"><span>iphone</span><br>
+        <hr>
+
+        <p>Filter By Brands</p>
+        <input type="checkbox" name="brand" ng-model="searchbrand.apple" ng-true-value=" 'apple' "  ng-false-value="''"><span>Apple</span><br>
+        <input type="checkbox" name="brand" ng-model="searchbrand.Samsung" ng-true-value=" 'Samsung' "  ng-false-value="''"><span>Samsung</span><br>
+        <input type="checkbox" name="brand" ng-model='searchbrand.nokia' ng-true-value=" 'nokia' "  ng-false-value="''"><span>Nokia</span><br>
+        <input type="checkbox" name="brand" ng-model='searchbrand.micromax' ng-true-value=" 'micromax' "  ng-false-value="''"><span>Micromax</span>
+        <hr>
+
+        <p>Filter By OPERATING SYSTEM</p>
+        <input type="checkbox" name="os-android" ng-model='searchos.android' ng-true-value=" 'android' "  ng-false-value="''"><span>Android</span><br>
+        <input type="checkbox" name="os-ios" ng-model='searchos.ios' ng-true-value=" 'ios' "  ng-false-value="''"><span>iOS</span>
+
+        <hr>
+        <hr>
+
+      </div>
+
+      <div class="col-md-8">
+        <h4 class="text-center ">Showing {{products.length}} in Mobiles</h4>
+          <div class="row">
+            <!-- <div ng-repeat="product in products | filteredByName : searchtxt |filterByPtype: search.smartphone : search.iphone | filterByBrand: searchbrand.apple : searchbrand.Samsung : searchbrand.nokia : searchbrand.micromax | filterByOs: searchos.android : searchos.ios"> -->
+            <div ng-repeat="product in products | filteredOperation: searchtxt : search.smartphone : search.iphone : searchbrand.apple : searchbrand.Samsung : searchbrand.nokia : searchbrand.micromax : searchos.android : searchos.ios">
+              <div class="col-xs-12 col-sm-4 col-md-4 text-center">                
+                <product-info product="product"></product-info>
+                <button class="btn" ng-click = "addProduct(product)">
+                  <span class="glyphicon glyphicon-shopping-cart "></span>
+                  Add
+                </button>
+                   <hr>
+              </div>             
+              </div>
+            </div>
+          </div>
+
+
+      <div class="col-md-2" ng-show="myCart.products.length > 0">
+        <h3>Cart Details</h3>
+        <hr>
+        <p>{{myCart.products.length}} items in cart</p>
+        <div ng-repeat="product in myCart.products">
+          <hr>
+          <img  class="img-responsive selected-img" ng-src="{{product.url}}"/>
+           <span class="badge size-img-cart" ng-show="product.qty > 1">
+                 x{{product.qty}}
+          </span>
+           <p>{{product.price | currency}}</p>
+           <p>{{"qty==>" + product.qty}}</p>           
+          <button class="btn btn-default" ng-click="incrementQty(product.id);">
+           <span class="glyphicon glyphicon-plus"></span>
+          </button>
+
+          <button class=" btn btn-default" ng-click="decrementQty(product.id);" ng-show="product.qty > 1">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+
+          <button class=" btn btn-default" ng-click="removeProduct($index);">
+            <span class="glyphicon glyphicon-remove-circle"></span>
+          </button>
+          <hr>
+          <p>{{product.amount}}</p>
+        </div>
+
+        <hr>
+
+        <p>Total Quantity: {{ myCart.totalQty }}</p>
+        <p>Total Amount: {{ myCart.totalAmount }}</p>
+
+        <button class="btn btn-default btn-lg" data-toggle="modal" data-target="#checkOutModal" ng-click="changeColor()">
+          <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+          Checkout
+        </button>
+        <div ng-include=" './templates/checkOut.html' "></div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="releted-items container">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <h1 class="text-center">Related Items</h1>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/Apple.jpeg" class="img-responsive center-block">
+            <p class="text-center">Micromax</p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/Asus.jpeg" class="img-responsive center-block">
+            <p class="text-center">Apple</p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/Micromax.jpeg" class="img-responsive center-block">
+            <p class="text-center">Samsung</p>
+            </div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/Motorola.jpeg" class="img-responsive center-block">
+            <p class="text-center">Asus</p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/Nokia.jpeg"  class="img-responsive center-block">
+            <p class="text-center">Lenevo</p>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="img/SamsungJs.jpeg"  class="img-responsive center-block">
+            <p class="text-center">Nokia</p>
+          </div>
+        </div>
+      </div>      
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+</div>

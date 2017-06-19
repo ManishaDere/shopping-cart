@@ -1,0 +1,108 @@
+/*@font-face {
+  font-family: 'Redressed';
+  src: url('../fonts/Redressed/Redressed.eot?#iefix') format('embedded-opentype'),  
+  url('../fonts/Redressed/Redressed.woff') format('woff'), 
+  url('../fonts/Redressed/Redressed.ttf')  format('truetype'), 
+  url('../fonts/Redressed/Redressed.svg#Redressed') format('svg');
+  }*/
+  @font-face {
+  font-family: 'Raleway-Regular';
+  src: url('../fonts/Raleway-Regular.eot?#iefix') format('embedded-opentype'),  
+  url('../fonts/Raleway-Regular.woff') format('woff'), 
+  url('../fonts/Raleway-Regular.ttf')  format('truetype'), 
+  url('../fonts/Raleway-Regular.svg#Raleway-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+	 font-family: 'Raleway-Regular';
+	font-style: normal;
+  background-color: #F5F8F9;
+}
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+header, footer{
+	background-color: #110440;
+}
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.navbar-nav > .active > a{
+	background-color: #E7E7E7;
+	padding: 10px;
+	border-radius: 4px;
+	margin-top: 5px;
+	color: #555;
+}
+a:hover{
+	background-color: transparent;
+}
+.navbar{
+	    margin-bottom: 0px;
+}
+.main-section{
+	
+	padding-top: 30px;
+}
+.col-md-2 > p {
+    margin: 0 0 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.form-control{
+	border: solid #ccc;
+    	border-radius: 0px;
+}
+input{
+	text-align: center;
+}
+.column-left{
+	padding-top: 20px;
+}
+.col-md-8 > h4{
+    font-size: larger;
+    font-weight: 600;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+.carousel-control.left, .carousel-control.right{
+    background-image: none;
+}
+.carousel-div{
+  background-color: transparent;
+}
+.selected-img
+{
+display: inline-block;
+margin: 0px;
+padding: 0px;
+width: 40px;
+}
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #110440;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: x-large;
+    padding-bottom: 15px;
+    padding-top: 30px;
+  }
+.btn{
+      background-color: #110440;
+      color: #FFFFFF;
+      border: 1px transparent;
+      border-color: #110440;
+}
+.btn-default:hover, .btn-default:focus {
+    color: #FFFFFF;
+    background-color: #110440;
+    border-color: #110440;
+    border: 1px transparent;
+}

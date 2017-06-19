@@ -1,0 +1,32 @@
+<!-- Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title  text-center" id="exampleModalLabel">Cart Summary</h3>
+        <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div ng-repeat="product in myCart.products">
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <img  class="img-responsive selected-img" ng-src="{{product.url}}"/>
+              <span class="badge size-img-cart" ng-show="product.qty > 1">
+              x{{product.qty}}
+              </span>
+              <span>{{product.name}}</span>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>Rs.{{product.price | currency}}</p>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4">
+              <p>{{product.ptype}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
